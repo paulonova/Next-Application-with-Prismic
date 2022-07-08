@@ -1,6 +1,6 @@
-import { useRouter } from "next/router";
-import React from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
+import React from "react";
+import { useRouter } from "../../../node_modules/next/router";
 
 interface Comment {
   id: string;
@@ -14,6 +14,9 @@ interface CommentsProps {
 const Post = ({ comments }: CommentsProps) => {
   const router = useRouter();
 
+  if (router.isFallback) {
+    return <p>Loading...</p>;
+  }
   return (
     <React.Fragment>
       <h1>Single Post {router.query.id} </h1>
@@ -27,17 +30,9 @@ const Post = ({ comments }: CommentsProps) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const response = await fetch("http://localhost:3333/posts");
-  const posts = await response.json();
-
-  const paths = posts.map((post) => {
-    return {
-      params: { id: String(post.id) },
-    };
-  });
   return {
-    paths,
-    fallback: false,
+    paths: [],
+    fallback: true,
   };
 };
 
