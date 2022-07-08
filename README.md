@@ -1,14 +1,42 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Link to Repo: https://github.com/aluiziodeveloper/nextjs-devnews-instalacao
 
 ## Getting Started
 
 First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+> npm run dev => Starts the development server.
+
+> npm run build => Builds the App for production
+
+> npm run start => To run the built App in production mode
+
+## Install TypeScript
+
+> npm install -D typescript @types/react @types/node
+
+## Move the folder Page into a SRC folder:
+
+<p>I can create a folder name posts and inside a file named index.tsx that will be the principal file in the folder</p>
+
+src- - posts - index.tsx
+
+## Using SASS
+
+> npm install sass
+
+<p>Nothing more! Next compile the scss file</p>
+
+## Run Json Server using api.json file in the root project
+
+> sudo chown -R $USER /usr/local/lib/node_modules
+> npx json-server api.json -p 3333 -w -d 2000
+
+<p>This will start server in port 3333, watch over changings and have a delay of 2 seconds</p>
+
+########################################################################
+########################################################################
+########################################################################
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
