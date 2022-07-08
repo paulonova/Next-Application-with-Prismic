@@ -30,6 +30,7 @@ src- - posts - index.tsx
 ## Run Json Server using api.json file in the root project
 
 > sudo chown -R $USER /usr/local/lib/node_modules
+
 > npx json-server api.json -p 3333 -w -d 2000
 
 <p>This will start server in port 3333, watch over changings and have a delay of 2 seconds</p>
